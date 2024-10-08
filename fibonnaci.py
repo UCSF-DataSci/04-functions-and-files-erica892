@@ -15,7 +15,7 @@ Task: Generate the Fibonacci numbers less than 100 and write them to `fibonacci_
 """
 import argparse
 
-def generate_fib_sequence(limit):
+def fibonnaci(limit):
     fib_sequence = []
 	a, b = 0, 1
 	while a < limit:
@@ -33,16 +33,16 @@ def main():
 	limit = args.limit
 	output_file = args.output_file
 
-fibonacci_numbers = generate_fib_sequence(limit)
+fibonacci_numbers = fibonnaci(limit)
 
 try:
         with open(output_file, 'w') as file:
             for num in fibonacci_numbers:
-                file.write(f"{num}\n")
-        print(f"Fibonacci numbers below {limit} have been written to {output_file}.")
+                file.write(f"{num} ")
+        print(f"Fibonacci numbers below {limit} are written to {output_file}.")
     
     except IOError as e:
-        print(f"Error occurred while writing to the file: {e}")
+        print(f"Unable to write Fibonacci numbers to the file: {e}")
 
 
 if __name__ == "__main__":
